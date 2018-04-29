@@ -43,10 +43,7 @@ class ConvNet(object):
 
 
     def loss(self, X, y=None):
-        """
-        Evaluate loss and gradient for the three-layer convolutional network.
-        Input / output: Same API as TwoLayerNet in fc_net.py.
-        """
+
         X = X.astype(self.dtype)
 
 
