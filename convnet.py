@@ -19,12 +19,6 @@ class ConvNet(object):
         self.bn_params = {}
         C, H, W = input_dim
 
-        # Conv layer
-        # The parameters of the conv is of size (F,C,HH,WW) with
-        # F give the nb of filters, C,HH,WW characterize the size of
-        # each filter
-        # Input size : (N,C,H,W)
-        # Output size : (N,F,Hc,Wc)
         F = num_filters
         filter_height = filter_size
         filter_width = filter_size
@@ -74,7 +68,7 @@ class ConvNet(object):
         loss, grads = 0, {}
 
         data_loss, dscores = softmax_loss(scores, y)
-        reg_loss = 0.5 * self.reg * np.sum(W1**2)
+        reg_loss  = 0.5 * self.reg * np.sum(W1**2)
         reg_loss += 0.5 * self.reg * np.sum(W2**2)
         loss = data_loss + reg_loss
         grads = {}
