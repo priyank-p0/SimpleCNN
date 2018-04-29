@@ -6,7 +6,7 @@ def conv_relu_forward(x, w, b, conv_param):
     A convenience layer that performs a convolution followed by a ReLU.
 
     """
-    a, conv_cache = conv_forward_naive(x, w, b, conv_param)
+    a, conv_cache = conv_forward(x, w, b, conv_param)
     out, relu_cache = relu_forward(a)
 
     cache = (conv_cache, relu_cache)
@@ -19,7 +19,7 @@ def conv_relu_backward(dout, cache):
     """
     conv_cache, relu_cache = cache
     da = relu_backward(dout, relu_cache)
-    dx, dw, db = conv_backward_naive(da, conv_cache)
+    dx, dw, db = conv_backward(da, conv_cache)
     return dx, dw, db
 
 
@@ -66,7 +66,7 @@ def relu_backward(dout, cache):
     return dx
 
 
-def conv_forward_naive(x, w, b, conv_param):
+def conv_forward(x, w, b, conv_param):
     """
     An implementation of the forward pass for a convolutional layer.
 
@@ -93,7 +93,7 @@ def conv_forward_naive(x, w, b, conv_param):
     return out, cache
 
 
-def conv_backward_naive(dout, cache):
+def conv_backward(dout, cache):
     """
     An implementation of the backward pass for a convolutional layer.
 
