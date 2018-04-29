@@ -2,7 +2,7 @@
 """The input dimensions (1x32x32)
  The filter size is (4x2x2) where 4 is the number of filters
  The output size is (10x1)
- architecture is (input->conv->relu->fc->output"""
+ architecture is (input->conv->relu->fc->output)"""
 
 
 from layers import *
