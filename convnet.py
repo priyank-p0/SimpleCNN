@@ -10,7 +10,7 @@ import numpy as np
 class ConvNet(object):
 
 
-    def __init__(self, input_dim=(1, 32, 32), num_filters=4, filter_size=2,
+    def __init__(self, input_dim=(1, 32, 32), num_filters=4, filter_size=16,
                   num_classes=10, weight_scale=1e-3, reg=0.0,
                  dtype=np.float32):
         self.params = {}
